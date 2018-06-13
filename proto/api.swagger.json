@@ -1,0 +1,571 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "proto/api.proto",
+    "version": "version not set"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/blob": {
+      "get": {
+        "operationId": "GetBlob",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/protoBlob"
+            }
+          }
+        },
+        "tags": [
+          "Benchmark"
+        ]
+      }
+    },
+    "/int": {
+      "get": {
+        "operationId": "GetInt",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/protoInt"
+            }
+          }
+        },
+        "tags": [
+          "Benchmark"
+        ]
+      }
+    },
+    "/int-slice": {
+      "get": {
+        "operationId": "GetIntSlice",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/protoIntSlice"
+            }
+          }
+        },
+        "tags": [
+          "Benchmark"
+        ]
+      }
+    },
+    "/string": {
+      "get": {
+        "operationId": "GetString",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/protoString"
+            }
+          }
+        },
+        "tags": [
+          "Benchmark"
+        ]
+      }
+    },
+    "/string-slice": {
+      "get": {
+        "operationId": "GetStringSlice",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/protoStringSlice"
+            }
+          }
+        },
+        "tags": [
+          "Benchmark"
+        ]
+      }
+    },
+    "/struct": {
+      "get": {
+        "operationId": "GetStruct",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/protoStruct"
+            }
+          }
+        },
+        "tags": [
+          "Benchmark"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "protoBlob": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "protoInt": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "protoIntSlice": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      }
+    },
+    "protoString": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string"
+        }
+      }
+    },
+    "protoStringSlice": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "protoStruct": {
+      "type": "object",
+      "properties": {
+        "value1": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value2": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value3": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value4": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value5": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value6": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value7": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value8": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value9": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value10": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value11": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value12": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value13": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value14": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value15": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value16": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value17": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value18": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value19": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value20": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value21": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value22": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value23": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value24": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value25": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value26": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value27": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value28": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value29": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value30": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value31": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value32": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value33": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value34": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value35": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value36": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value37": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value38": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value39": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value40": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value41": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value42": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value43": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value44": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value45": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value46": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value47": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value48": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value49": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value50": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value51": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value52": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value53": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value54": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value55": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value56": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value57": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value58": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value59": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value60": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value61": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value62": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value63": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value64": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value65": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value66": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value67": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value68": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value69": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value70": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value71": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value72": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value73": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value74": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value75": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value76": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value77": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value78": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value79": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value80": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value81": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value82": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value83": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value84": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value85": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value86": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value87": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value88": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value89": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value90": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value91": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value92": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value93": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value94": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value95": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value96": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value97": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value98": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value99": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "value100": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  }
+}

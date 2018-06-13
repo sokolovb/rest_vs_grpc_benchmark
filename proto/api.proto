@@ -1,0 +1,163 @@
+syntax = "proto3";
+
+package proto;
+
+import "google/api/annotations.proto";
+
+service Benchmark {
+    rpc GetInt (Request) returns (Int) {
+        option (google.api.http) = {
+            get: "/int"
+        };
+    }
+    rpc GetIntSlice (Request) returns (IntSlice) {
+        option (google.api.http) = {
+            get: "/int-slice"
+        };
+    }
+    rpc GetString (Request) returns (String) {
+        option (google.api.http) = {
+            get: "/string"
+        };
+    }
+    rpc GetStringSlice (Request) returns (StringSlice) {
+        option (google.api.http) = {
+            get: "/string-slice"
+        };
+    }
+    rpc GetBlob (Request) returns (Blob) {
+        option (google.api.http) = {
+            get: "/blob"
+        };
+    }
+    rpc GetStruct (Request) returns (Struct) {
+        option (google.api.http) = {
+            get: "/struct"
+        };
+    }
+}
+
+message Request {}
+
+message Int {
+    int32 value = 1;
+}
+
+message IntSlice {
+    repeated int32 value = 1;
+}
+
+message String {
+    string value = 1;
+}
+
+message StringSlice {
+    repeated string value = 1;
+}
+
+message Blob {
+    bytes value = 1;
+}
+
+message Struct {
+    int32 value1 = 1;
+    int32 value2 = 2;
+    int32 value3 = 3;
+    int32 value4 = 4;
+    int32 value5 = 5;
+    int32 value6 = 6;
+    int32 value7 = 7;
+    int32 value8 = 8;
+    int32 value9 = 9;
+    int32 value10 = 10;
+    int32 value11 = 11;
+    int32 value12 = 12;
+    int32 value13 = 13;
+    int32 value14 = 14;
+    int32 value15 = 15;
+    int32 value16 = 16;
+    int32 value17 = 17;
+    int32 value18 = 18;
+    int32 value19 = 19;
+    int32 value20 = 20;
+    int32 value21 = 21;
+    int32 value22 = 22;
+    int32 value23 = 23;
+    int32 value24 = 24;
+    int32 value25 = 25;
+    int32 value26 = 26;
+    int32 value27 = 27;
+    int32 value28 = 28;
+    int32 value29 = 29;
+    int32 value30 = 30;
+    int32 value31 = 31;
+    int32 value32 = 32;
+    int32 value33 = 33;
+    int32 value34 = 34;
+    int32 value35 = 35;
+    int32 value36 = 36;
+    int32 value37 = 37;
+    int32 value38 = 38;
+    int32 value39 = 39;
+    int32 value40 = 40;
+    int32 value41 = 41;
+    int32 value42 = 42;
+    int32 value43 = 43;
+    int32 value44 = 44;
+    int32 value45 = 45;
+    int32 value46 = 46;
+    int32 value47 = 47;
+    int32 value48 = 48;
+    int32 value49 = 49;
+    int32 value50 = 50;
+    int32 value51 = 51;
+    int32 value52 = 52;
+    int32 value53 = 53;
+    int32 value54 = 54;
+    int32 value55 = 55;
+    int32 value56 = 56;
+    int32 value57 = 57;
+    int32 value58 = 58;
+    int32 value59 = 59;
+    int32 value60 = 60;
+    int32 value61 = 61;
+    int32 value62 = 62;
+    int32 value63 = 63;
+    int32 value64 = 64;
+    int32 value65 = 65;
+    int32 value66 = 66;
+    int32 value67 = 67;
+    int32 value68 = 68;
+    int32 value69 = 69;
+    int32 value70 = 70;
+    int32 value71 = 71;
+    int32 value72 = 72;
+    int32 value73 = 73;
+    int32 value74 = 74;
+    int32 value75 = 75;
+    int32 value76 = 76;
+    int32 value77 = 77;
+    int32 value78 = 78;
+    int32 value79 = 79;
+    int32 value80 = 80;
+    int32 value81 = 81;
+    int32 value82 = 82;
+    int32 value83 = 83;
+    int32 value84 = 84;
+    int32 value85 = 85;
+    int32 value86 = 86;
+    int32 value87 = 87;
+    int32 value88 = 88;
+    int32 value89 = 89;
+    int32 value90 = 90;
+    int32 value91 = 91;
+    int32 value92 = 92;
+    int32 value93 = 93;
+    int32 value94 = 94;
+    int32 value95 = 95;
+    int32 value96 = 96;
+    int32 value97 = 97;
+    int32 value98 = 98;
+    int32 value99 = 99;
+    int32 value100 = 100;
+}
