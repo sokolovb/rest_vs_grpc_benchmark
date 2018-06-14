@@ -41,7 +41,6 @@ func StartRestProxy(port string) error {
 	}
 	mux := http.NewServeMux()
 	mux.Handle("/", gwmux)
-	mux.Handle("/swagger/", http.StripPrefix("/swagger/", http.FileServer(assetFS())))
 	return http.ListenAndServe("localhost:"+port, mux)
 }
 

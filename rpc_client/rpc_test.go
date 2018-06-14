@@ -21,10 +21,42 @@ func BenchmarkRpcClient_GetInt(b *testing.B) {
 	}
 }
 
+func BenchmarkRpcClient_GetIntSlice(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		if err := rpc.GetIntSlice(); err != nil {
+			b.Fatalf("GetIntSlice() error: %v", err)
+		}
+	}
+}
+
+func BenchmarkRpcClient_GetString(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		if err := rpc.GetString(); err != nil {
+			b.Fatalf("GetString() error: %v", err)
+		}
+	}
+}
+
+func BenchmarkRpcClient_GetStringSlice(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		if err := rpc.GetStringSlice(); err != nil {
+			b.Fatalf("GetStringSlice() error: %v", err)
+		}
+	}
+}
+
 func BenchmarkRpcClient_GetBlob(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		if err := rpc.GetBlob(); err != nil {
 			b.Fatalf("GetBlob() error: %v", err)
+		}
+	}
+}
+
+func BenchmarkRpcClient_GetStruct(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		if err := rpc.GetStruct(); err != nil {
+			b.Fatalf("GetStruct() error: %v", err)
 		}
 	}
 }
