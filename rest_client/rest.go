@@ -44,6 +44,8 @@ func (rest *RestClient) GetStruct() error {
 
 func (rest *RestClient) doGet(endpoint string) error {
 	resp, err := rest.c.Get(endpoint)
+	defer resp.Body.Close()
+
 	if err != nil {
 		return err
 	}
