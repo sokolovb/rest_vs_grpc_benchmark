@@ -3,7 +3,7 @@ package rpc_client
 import (
 	"context"
 	"google.golang.org/grpc"
-	. "rest-vs-grpc/proto"
+	. "github.com/sokolovb/rest_vs_grpc_benchmark/proto"
 )
 
 type RpcClient struct {

@@ -2,7 +2,7 @@ package rpc_client_test
 
 import (
 	"os"
-	"rest-vs-grpc/rpc_client"
+	"github.com/sokolovb/rest_vs_grpc_benchmark/rpc_client"
 	"testing"
 )
 

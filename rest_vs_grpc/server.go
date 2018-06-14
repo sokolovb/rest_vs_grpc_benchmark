@@ -6,11 +6,11 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"net"
-	md "rest-vs-grpc/mock_data"
-	. "rest-vs-grpc/proto"
+	md "github.com/sokolovb/rest_vs_grpc_benchmark/mock_data"
+	. "github.com/sokolovb/rest_vs_grpc_benchmark/proto"
 	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"net/http"
-	"rest-vs-grpc/proto"
+	"github.com/sokolovb/rest_vs_grpc_benchmark/proto"
 )
 
 const (

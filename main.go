@@ -1,9 +1,9 @@
 package main
 
 import (
-	. "rest-vs-grpc/mock_data"
-	. "rest-vs-grpc/pure_rest"
-	. "rest-vs-grpc/rest_vs_grpc"
+	. "github.com/sokolovb/rest_vs_grpc_benchmark/mock_data"
+	. "github.com/sokolovb/rest_vs_grpc_benchmark/pure_rest"
+	. "github.com/sokolovb/rest_vs_grpc_benchmark/rest_vs_grpc"
 	"log"
 )
 

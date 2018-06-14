@@ -3,7 +3,7 @@ package mock_data
 import (
 	"math/rand"
 	"reflect"
-	. "rest-vs-grpc/proto"
+	. "github.com/sokolovb/rest_vs_grpc_benchmark/proto"
 )
 
 const (

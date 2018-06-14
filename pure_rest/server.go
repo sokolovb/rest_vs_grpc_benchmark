@@ -3,8 +3,8 @@ package pure_rest
 import (
 	"encoding/json"
 	"net/http"
-	md "rest-vs-grpc/mock_data"
-	"rest-vs-grpc/proto"
+	md "github.com/sokolovb/rest_vs_grpc_benchmark/mock_data"
+	"github.com/sokolovb/rest_vs_grpc_benchmark/proto"
 )
 
 const PortRest = "3000"
