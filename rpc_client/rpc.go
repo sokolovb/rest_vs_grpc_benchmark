@@ -4,6 +4,7 @@ import (
 	"context"
 	"google.golang.org/grpc"
 	. "github.com/sokolovb/rest_vs_grpc_benchmark/proto"
+	. "github.com/sokolovb/rest_vs_grpc_benchmark/rest_vs_grpc"
 )
 
 type RpcClient struct {
@@ -11,7 +12,7 @@ type RpcClient struct {
 }
 
 func NewRpcClient() *RpcClient {
-	conn, _ := grpc.Dial("localhost:50030", grpc.WithInsecure())
+	conn, _ := grpc.Dial("localhost:" + PortRpc, grpc.WithInsecure())
 	return &RpcClient{NewBenchmarkClient(conn)}
 }
 
