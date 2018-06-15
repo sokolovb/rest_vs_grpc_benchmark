@@ -3,14 +3,14 @@ package rest_vs_grpc
 import (
 	"context"
 	"fmt"
+	"github.com/grpc-ecosystem/grpc-gateway/runtime"
+	md "github.com/sokolovb/rest_vs_grpc_benchmark/mock_data"
+	"github.com/sokolovb/rest_vs_grpc_benchmark/proto"
+	. "github.com/sokolovb/rest_vs_grpc_benchmark/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"net"
-	md "github.com/sokolovb/rest_vs_grpc_benchmark/mock_data"
-	. "github.com/sokolovb/rest_vs_grpc_benchmark/proto"
-	"github.com/grpc-ecosystem/grpc-gateway/runtime"
 	"net/http"
-	"github.com/sokolovb/rest_vs_grpc_benchmark/proto"
 )
 
 const (
@@ -74,4 +74,12 @@ func (h *Handler) GetBlob(context.Context, *Request) (*Blob, error) {
 
 func (h *Handler) GetStruct(context.Context, *Request) (*Struct, error) {
 	return h.data.GetStruct(), nil
+}
+
+func (h *Handler) GetStructSlices(context.Context, *Request) (*StructSlices, error) {
+	return h.data.GetStructSlices(), nil
+}
+
+func (h *Handler) GetStructStructs(context.Context, *Request) (*StructStructs, error) {
+	return h.data.GetStructStructs(), nil
 }

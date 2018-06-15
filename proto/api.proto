@@ -35,6 +35,16 @@ service Benchmark {
             get: "/struct"
         };
     }
+    rpc GetStructSlices (Request) returns (StructSlices) {
+        option (google.api.http) = {
+            get: "/struct-slices"
+        };
+    }
+    rpc GetStructStructs (Request) returns (StructStructs) {
+        option (google.api.http) = {
+            get: "/struct-structs"
+        };
+    }
 }
 
 message Request {}
@@ -160,4 +170,210 @@ message Struct {
     int32 value98 = 98;
     int32 value99 = 99;
     int32 value100 = 100;
+}
+
+message StructSlices {
+    IntSlice value1 = 1;
+    IntSlice value2 = 2;
+    IntSlice value3 = 3;
+    IntSlice value4 = 4;
+    IntSlice value5 = 5;
+    IntSlice value6 = 6;
+    IntSlice value7 = 7;
+    IntSlice value8 = 8;
+    IntSlice value9 = 9;
+    IntSlice value10 = 10;
+    IntSlice value11 = 11;
+    IntSlice value12 = 12;
+    IntSlice value13 = 13;
+    IntSlice value14 = 14;
+    IntSlice value15 = 15;
+    IntSlice value16 = 16;
+    IntSlice value17 = 17;
+    IntSlice value18 = 18;
+    IntSlice value19 = 19;
+    IntSlice value20 = 20;
+    IntSlice value21 = 21;
+    IntSlice value22 = 22;
+    IntSlice value23 = 23;
+    IntSlice value24 = 24;
+    IntSlice value25 = 25;
+    IntSlice value26 = 26;
+    IntSlice value27 = 27;
+    IntSlice value28 = 28;
+    IntSlice value29 = 29;
+    IntSlice value30 = 30;
+    IntSlice value31 = 31;
+    IntSlice value32 = 32;
+    IntSlice value33 = 33;
+    IntSlice value34 = 34;
+    IntSlice value35 = 35;
+    IntSlice value36 = 36;
+    IntSlice value37 = 37;
+    IntSlice value38 = 38;
+    IntSlice value39 = 39;
+    IntSlice value40 = 40;
+    IntSlice value41 = 41;
+    IntSlice value42 = 42;
+    IntSlice value43 = 43;
+    IntSlice value44 = 44;
+    IntSlice value45 = 45;
+    IntSlice value46 = 46;
+    IntSlice value47 = 47;
+    IntSlice value48 = 48;
+    IntSlice value49 = 49;
+    IntSlice value50 = 50;
+    IntSlice value51 = 51;
+    IntSlice value52 = 52;
+    IntSlice value53 = 53;
+    IntSlice value54 = 54;
+    IntSlice value55 = 55;
+    IntSlice value56 = 56;
+    IntSlice value57 = 57;
+    IntSlice value58 = 58;
+    IntSlice value59 = 59;
+    IntSlice value60 = 60;
+    IntSlice value61 = 61;
+    IntSlice value62 = 62;
+    IntSlice value63 = 63;
+    IntSlice value64 = 64;
+    IntSlice value65 = 65;
+    IntSlice value66 = 66;
+    IntSlice value67 = 67;
+    IntSlice value68 = 68;
+    IntSlice value69 = 69;
+    IntSlice value70 = 70;
+    IntSlice value71 = 71;
+    IntSlice value72 = 72;
+    IntSlice value73 = 73;
+    IntSlice value74 = 74;
+    IntSlice value75 = 75;
+    IntSlice value76 = 76;
+    IntSlice value77 = 77;
+    IntSlice value78 = 78;
+    IntSlice value79 = 79;
+    IntSlice value80 = 80;
+    IntSlice value81 = 81;
+    IntSlice value82 = 82;
+    IntSlice value83 = 83;
+    IntSlice value84 = 84;
+    IntSlice value85 = 85;
+    IntSlice value86 = 86;
+    IntSlice value87 = 87;
+    IntSlice value88 = 88;
+    IntSlice value89 = 89;
+    IntSlice value90 = 90;
+    IntSlice value91 = 91;
+    IntSlice value92 = 92;
+    IntSlice value93 = 93;
+    IntSlice value94 = 94;
+    IntSlice value95 = 95;
+    IntSlice value96 = 96;
+    IntSlice value97 = 97;
+    IntSlice value98 = 98;
+    IntSlice value99 = 99;
+    IntSlice value100 = 100;
+}
+
+message StructStructs {
+    Struct value1 = 1;
+    Struct value2 = 2;
+    Struct value3 = 3;
+    Struct value4 = 4;
+    Struct value5 = 5;
+    Struct value6 = 6;
+    Struct value7 = 7;
+    Struct value8 = 8;
+    Struct value9 = 9;
+    Struct value10 = 10;
+    Struct value11 = 11;
+    Struct value12 = 12;
+    Struct value13 = 13;
+    Struct value14 = 14;
+    Struct value15 = 15;
+    Struct value16 = 16;
+    Struct value17 = 17;
+    Struct value18 = 18;
+    Struct value19 = 19;
+    Struct value20 = 20;
+    Struct value21 = 21;
+    Struct value22 = 22;
+    Struct value23 = 23;
+    Struct value24 = 24;
+    Struct value25 = 25;
+    Struct value26 = 26;
+    Struct value27 = 27;
+    Struct value28 = 28;
+    Struct value29 = 29;
+    Struct value30 = 30;
+    Struct value31 = 31;
+    Struct value32 = 32;
+    Struct value33 = 33;
+    Struct value34 = 34;
+    Struct value35 = 35;
+    Struct value36 = 36;
+    Struct value37 = 37;
+    Struct value38 = 38;
+    Struct value39 = 39;
+    Struct value40 = 40;
+    Struct value41 = 41;
+    Struct value42 = 42;
+    Struct value43 = 43;
+    Struct value44 = 44;
+    Struct value45 = 45;
+    Struct value46 = 46;
+    Struct value47 = 47;
+    Struct value48 = 48;
+    Struct value49 = 49;
+    Struct value50 = 50;
+    Struct value51 = 51;
+    Struct value52 = 52;
+    Struct value53 = 53;
+    Struct value54 = 54;
+    Struct value55 = 55;
+    Struct value56 = 56;
+    Struct value57 = 57;
+    Struct value58 = 58;
+    Struct value59 = 59;
+    Struct value60 = 60;
+    Struct value61 = 61;
+    Struct value62 = 62;
+    Struct value63 = 63;
+    Struct value64 = 64;
+    Struct value65 = 65;
+    Struct value66 = 66;
+    Struct value67 = 67;
+    Struct value68 = 68;
+    Struct value69 = 69;
+    Struct value70 = 70;
+    Struct value71 = 71;
+    Struct value72 = 72;
+    Struct value73 = 73;
+    Struct value74 = 74;
+    Struct value75 = 75;
+    Struct value76 = 76;
+    Struct value77 = 77;
+    Struct value78 = 78;
+    Struct value79 = 79;
+    Struct value80 = 80;
+    Struct value81 = 81;
+    Struct value82 = 82;
+    Struct value83 = 83;
+    Struct value84 = 84;
+    Struct value85 = 85;
+    Struct value86 = 86;
+    Struct value87 = 87;
+    Struct value88 = 88;
+    Struct value89 = 89;
+    Struct value90 = 90;
+    Struct value91 = 91;
+    Struct value92 = 92;
+    Struct value93 = 93;
+    Struct value94 = 94;
+    Struct value95 = 95;
+    Struct value96 = 96;
+    Struct value97 = 97;
+    Struct value98 = 98;
+    Struct value99 = 99;
+    Struct value100 = 100;
 }

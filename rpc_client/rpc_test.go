@@ -1,8 +1,8 @@
 package rpc_client_test
 
 import (
-	"os"
 	"github.com/sokolovb/rest_vs_grpc_benchmark/rpc_client"
+	"os"
 	"testing"
 )
 
@@ -45,6 +45,14 @@ func BenchmarkRpcClient_GetStringSlice(b *testing.B) {
 	}
 }
 
+func BenchmarkRpcClient_GetStruct(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		if err := rpc.GetStruct(); err != nil {
+			b.Fatalf("GetStruct() error: %v", err)
+		}
+	}
+}
+
 func BenchmarkRpcClient_GetBlob(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		if err := rpc.GetBlob(); err != nil {
@@ -53,10 +61,18 @@ func BenchmarkRpcClient_GetBlob(b *testing.B) {
 	}
 }
 
-func BenchmarkRpcClient_GetStruct(b *testing.B) {
+func BenchmarkRpcClient_GetStructSlices(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		if err := rpc.GetStruct(); err != nil {
-			b.Fatalf("GetStruct() error: %v", err)
+		if err := rpc.GetStructSlices(); err != nil {
+			b.Fatalf("GetStructSlices() error: %v", err)
+		}
+	}
+}
+
+func BenchmarkRpcClient_GetStructStructs(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		if err := rpc.GetStructStructs(); err != nil {
+			b.Fatalf("GetStructStructs() error: %v", err)
 		}
 	}
 }

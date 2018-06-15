@@ -42,6 +42,14 @@ func (rest *RestClient) GetStruct() error {
 	return rest.doGet(strings.Join([]string{rest.host, "struct"}, "/"))
 }
 
+func (rest *RestClient) GetStructSlices() error {
+	return rest.doGet(strings.Join([]string{rest.host, "struct-slices"}, "/"))
+}
+
+func (rest *RestClient) GetStructStructs() error {
+	return rest.doGet(strings.Join([]string{rest.host, "struct-structs"}, "/"))
+}
+
 func (rest *RestClient) doGet(endpoint string) error {
 	resp, err := rest.c.Get(endpoint)
 	defer resp.Body.Close()

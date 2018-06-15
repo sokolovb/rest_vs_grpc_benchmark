@@ -110,6 +110,38 @@
           "Benchmark"
         ]
       }
+    },
+    "/struct-slices": {
+      "get": {
+        "operationId": "GetStructSlices",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/protoStructSlices"
+            }
+          }
+        },
+        "tags": [
+          "Benchmark"
+        ]
+      }
+    },
+    "/struct-structs": {
+      "get": {
+        "operationId": "GetStructStructs",
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/protoStructStructs"
+            }
+          }
+        },
+        "tags": [
+          "Benchmark"
+        ]
+      }
     }
   },
   "definitions": {
@@ -564,6 +596,616 @@
         "value100": {
           "type": "integer",
           "format": "int32"
+        }
+      }
+    },
+    "protoStructSlices": {
+      "type": "object",
+      "properties": {
+        "value1": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value2": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value3": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value4": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value5": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value6": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value7": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value8": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value9": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value10": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value11": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value12": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value13": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value14": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value15": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value16": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value17": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value18": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value19": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value20": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value21": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value22": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value23": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value24": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value25": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value26": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value27": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value28": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value29": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value30": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value31": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value32": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value33": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value34": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value35": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value36": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value37": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value38": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value39": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value40": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value41": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value42": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value43": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value44": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value45": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value46": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value47": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value48": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value49": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value50": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value51": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value52": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value53": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value54": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value55": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value56": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value57": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value58": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value59": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value60": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value61": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value62": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value63": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value64": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value65": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value66": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value67": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value68": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value69": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value70": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value71": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value72": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value73": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value74": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value75": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value76": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value77": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value78": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value79": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value80": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value81": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value82": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value83": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value84": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value85": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value86": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value87": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value88": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value89": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value90": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value91": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value92": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value93": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value94": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value95": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value96": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value97": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value98": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value99": {
+          "$ref": "#/definitions/protoIntSlice"
+        },
+        "value100": {
+          "$ref": "#/definitions/protoIntSlice"
+        }
+      }
+    },
+    "protoStructStructs": {
+      "type": "object",
+      "properties": {
+        "value1": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value2": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value3": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value4": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value5": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value6": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value7": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value8": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value9": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value10": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value11": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value12": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value13": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value14": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value15": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value16": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value17": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value18": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value19": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value20": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value21": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value22": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value23": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value24": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value25": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value26": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value27": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value28": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value29": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value30": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value31": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value32": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value33": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value34": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value35": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value36": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value37": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value38": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value39": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value40": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value41": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value42": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value43": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value44": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value45": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value46": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value47": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value48": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value49": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value50": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value51": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value52": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value53": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value54": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value55": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value56": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value57": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value58": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value59": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value60": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value61": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value62": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value63": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value64": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value65": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value66": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value67": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value68": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value69": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value70": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value71": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value72": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value73": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value74": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value75": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value76": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value77": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value78": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value79": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value80": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value81": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value82": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value83": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value84": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value85": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value86": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value87": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value88": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value89": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value90": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value91": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value92": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value93": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value94": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value95": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value96": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value97": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value98": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value99": {
+          "$ref": "#/definitions/protoStruct"
+        },
+        "value100": {
+          "$ref": "#/definitions/protoStruct"
         }
       }
     }

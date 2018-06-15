@@ -1,10 +1,10 @@
 package rest_client_test
 
 import (
-	"os"
 	. "github.com/sokolovb/rest_vs_grpc_benchmark/pure_rest"
 	"github.com/sokolovb/rest_vs_grpc_benchmark/rest_client"
 	. "github.com/sokolovb/rest_vs_grpc_benchmark/rest_vs_grpc"
+	"os"
 	"testing"
 )
 
@@ -15,6 +15,8 @@ func TestMain(m *testing.M) {
 	restProxy = rest_client.NewRestClient(PortRestProxy)
 	os.Exit(m.Run())
 }
+
+// grpc-gateway proxy benchmarks
 
 func BenchmarkRestClient_GetInt_Proxy(b *testing.B) {
 	for i := 0; i < b.N; i++ {
@@ -48,6 +50,14 @@ func BenchmarkRestClient_GetStringSlice_Proxy(b *testing.B) {
 	}
 }
 
+func BenchmarkRestClient_GetStruct_Proxy(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		if err := restProxy.GetStruct(); err != nil {
+			b.Fatalf("GetStruct() error: %v", err)
+		}
+	}
+}
+
 func BenchmarkRestClient_GetBlob_Proxy(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		if err := restProxy.GetBlob(); err != nil {
@@ -56,13 +66,23 @@ func BenchmarkRestClient_GetBlob_Proxy(b *testing.B) {
 	}
 }
 
-func BenchmarkRestClient_GetStruct_Proxy(b *testing.B) {
+func BenchmarkRestClient_GetStructSlices_Proxy(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		if err := restProxy.GetStruct(); err != nil {
-			b.Fatalf("GetStruct() error: %v", err)
+		if err := restProxy.GetStructSlices(); err != nil {
+			b.Fatalf("GetStructSlices() error: %v", err)
 		}
 	}
 }
+
+func BenchmarkRestClient_GetStructStructs_Proxy(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		if err := restProxy.GetStructStructs(); err != nil {
+			b.Fatalf("GetStructStructs() error: %v", err)
+		}
+	}
+}
+
+// pure rest api benchmarks
 
 func BenchmarkRestClient_GetInt_Pure(b *testing.B) {
 	for i := 0; i < b.N; i++ {
@@ -96,6 +116,14 @@ func BenchmarkRestClient_GetStringSlice_Pure(b *testing.B) {
 	}
 }
 
+func BenchmarkRestClient_GetStruct_Pure(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		if err := restPure.GetStruct(); err != nil {
+			b.Fatalf("GetStruct() error: %v", err)
+		}
+	}
+}
+
 func BenchmarkRestClient_GetBlob_Pure(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		if err := restPure.GetBlob(); err != nil {
@@ -104,10 +132,18 @@ func BenchmarkRestClient_GetBlob_Pure(b *testing.B) {
 	}
 }
 
-func BenchmarkRestClient_GetStruct_Pure(b *testing.B) {
+func BenchmarkRestClient_GetStructSlices_Pure(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		if err := restPure.GetStruct(); err != nil {
-			b.Fatalf("GetStruct() error: %v", err)
+		if err := restPure.GetStructSlices(); err != nil {
+			b.Fatalf("GetStructSlices() error: %v", err)
+		}
+	}
+}
+
+func BenchmarkRestClient_GetStructStructs_Pure(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		if err := restPure.GetStructStructs(); err != nil {
+			b.Fatalf("GetStructStructs() error: %v", err)
 		}
 	}
 }

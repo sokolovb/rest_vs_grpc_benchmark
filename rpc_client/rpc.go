@@ -2,9 +2,9 @@ package rpc_client
 
 import (
 	"context"
-	"google.golang.org/grpc"
 	. "github.com/sokolovb/rest_vs_grpc_benchmark/proto"
 	. "github.com/sokolovb/rest_vs_grpc_benchmark/rest_vs_grpc"
+	"google.golang.org/grpc"
 )
 
 type RpcClient struct {
@@ -12,7 +12,7 @@ type RpcClient struct {
 }
 
 func NewRpcClient() *RpcClient {
-	conn, _ := grpc.Dial("localhost:" + PortRpc, grpc.WithInsecure())
+	conn, _ := grpc.Dial("localhost:"+PortRpc, grpc.WithInsecure())
 	return &RpcClient{NewBenchmarkClient(conn)}
 }
 
@@ -43,5 +43,15 @@ func (rpc *RpcClient) GetBlob() error {
 
 func (rpc *RpcClient) GetStruct() error {
 	_, err := rpc.c.GetStruct(context.Background(), &Request{})
+	return err
+}
+
+func (rpc *RpcClient) GetStructSlices() error {
+	_, err := rpc.c.GetStructSlices(context.Background(), &Request{})
+	return err
+}
+
+func (rpc *RpcClient) GetStructStructs() error {
+	_, err := rpc.c.GetStructStructs(context.Background(), &Request{})
 	return err
 }
