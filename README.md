@@ -1,7 +1,7 @@
 # REST vs gRPC benchmark
 
 ### dependencies:
-- Go 1.8+
+- Go 1.9+
 - protoc 3.0+
 
 ### build:

@@ -53,23 +53,23 @@ func NewServer(data *md.Data) BenchmarkServer {
 }
 
 func (h *Handler) GetInt(context.Context, *Request) (*Int, error) {
-	return &Int{h.data.GetInt()}, nil
+	return h.data.GetInt(), nil
 }
 
 func (h *Handler) GetIntSlice(context.Context, *Request) (*IntSlice, error) {
-	return &IntSlice{h.data.GetIntSlice()}, nil
+	return h.data.GetIntSlice(), nil
 }
 
 func (h *Handler) GetString(context.Context, *Request) (*String, error) {
-	return &String{h.data.GetString()}, nil
+	return h.data.GetString(), nil
 }
 
 func (h *Handler) GetStringSlice(context.Context, *Request) (*StringSlice, error) {
-	return &StringSlice{h.data.GetStringSlice()}, nil
+	return h.data.GetStringSlice(), nil
 }
 
 func (h *Handler) GetBlob(context.Context, *Request) (*Blob, error) {
-	return &Blob{h.data.GetBlob()}, nil
+	return h.data.GetBlob(), nil
 }
 
 func (h *Handler) GetStruct(context.Context, *Request) (*Struct, error) {

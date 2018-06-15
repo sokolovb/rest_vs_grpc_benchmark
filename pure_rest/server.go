@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"net/http"
 	md "github.com/sokolovb/rest_vs_grpc_benchmark/mock_data"
-	"github.com/sokolovb/rest_vs_grpc_benchmark/proto"
 )
 
 const PortRest = "3000"
@@ -30,27 +29,27 @@ func StartPureRestServer(data *md.Data, port string) error {
 }
 
 func (h *handler) integer(w http.ResponseWriter, r *http.Request) {
-	formResponse(w, &proto.Int{h.data.GetInt()})
+	formResponse(w, h.data.GetInt())
 	return
 }
 
 func (h *handler) integerSlice(w http.ResponseWriter, r *http.Request) {
-	formResponse(w, &proto.IntSlice{h.data.GetIntSlice()})
+	formResponse(w, h.data.GetIntSlice())
 	return
 }
 
 func (h *handler) str(w http.ResponseWriter, r *http.Request) {
-	formResponse(w, &proto.String{h.data.GetString()})
+	formResponse(w, h.data.GetString())
 	return
 }
 
 func (h *handler) strSlice(w http.ResponseWriter, r *http.Request) {
-	formResponse(w, &proto.StringSlice{h.data.GetStringSlice()})
+	formResponse(w, h.data.GetStringSlice())
 	return
 }
 
 func (h *handler) blob(w http.ResponseWriter, r *http.Request) {
-	formResponse(w, &proto.Blob{h.data.GetBlob()})
+	formResponse(w, h.data.GetBlob())
 	return
 }
 
