@@ -7,7 +7,6 @@ func SerializeProtobuf(in proto.Message) error {
 	return err
 }
 
-func DeserializeProtobuf(in []byte) error {
-	var out proto.Message
+func DeserializeProtobuf(in []byte, out proto.Message) error {
 	return proto.Unmarshal(in, out)
 }

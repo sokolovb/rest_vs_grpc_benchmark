@@ -9,5 +9,5 @@ func SerializeJSON(in interface{}) error {
 
 func DeserializeJSON(in []byte) error {
 	var out interface{}
-	return json.Unmarshal(in, out)
+	return json.Unmarshal(in, &out)
 }
