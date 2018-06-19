@@ -55,3 +55,8 @@ func (rpc *RpcClient) GetStructStructs() error {
 	_, err := rpc.c.GetStructStructs(context.Background(), &Request{})
 	return err
 }
+
+func (rpc *RpcClient) GetIntStream() error {
+	_, err := rpc.c.GetIntStream(context.Background(), &Request{})
+	return err
+}

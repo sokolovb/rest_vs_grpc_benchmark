@@ -83,3 +83,12 @@ func (h *Handler) GetStructSlices(context.Context, *Request) (*StructSlices, err
 func (h *Handler) GetStructStructs(context.Context, *Request) (*StructStructs, error) {
 	return h.data.GetStructStructs(), nil
 }
+
+func (h *Handler) GetIntStream(req *Request, stream Benchmark_GetIntStreamServer) error {
+	for i := 0; i < 10000; i++ {
+		if err := stream.Send(h.data.GetInt()); err != nil {
+			return err
+		}
+	}
+	return nil
+}

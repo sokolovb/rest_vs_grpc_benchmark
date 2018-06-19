@@ -63,6 +63,22 @@
         ]
       }
     },
+    "/int-stream": {
+      "get": {
+        "operationId": "GetIntStream",
+        "responses": {
+          "200": {
+            "description": "(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/protoInt"
+            }
+          }
+        },
+        "tags": [
+          "Benchmark"
+        ]
+      }
+    },
     "/string": {
       "get": {
         "operationId": "GetString",

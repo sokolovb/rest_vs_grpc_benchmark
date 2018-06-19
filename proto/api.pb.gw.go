@@ -100,6 +100,23 @@ func request_Benchmark_GetStructStructs_0(ctx context.Context, marshaler runtime
 
 }
 
+func request_Benchmark_GetIntStream_0(ctx context.Context, marshaler runtime.Marshaler, client BenchmarkClient, req *http.Request, pathParams map[string]string) (Benchmark_GetIntStreamClient, runtime.ServerMetadata, error) {
+	var protoReq Request
+	var metadata runtime.ServerMetadata
+
+	stream, err := client.GetIntStream(ctx, &protoReq)
+	if err != nil {
+		return nil, metadata, err
+	}
+	header, err := stream.Header()
+	if err != nil {
+		return nil, metadata, err
+	}
+	metadata.HeaderMD = header
+	return stream, metadata, nil
+
+}
+
 // RegisterBenchmarkHandlerFromEndpoint is same as RegisterBenchmarkHandler but
 // automatically dials to "endpoint" and closes the connection when "ctx" gets done.
 func RegisterBenchmarkHandlerFromEndpoint(ctx context.Context, mux *runtime.ServeMux, endpoint string, opts []grpc.DialOption) (err error) {
@@ -370,6 +387,35 @@ func RegisterBenchmarkHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
+	mux.Handle("GET", pattern_Benchmark_GetIntStream_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+		ctx, cancel := context.WithCancel(req.Context())
+		defer cancel()
+		if cn, ok := w.(http.CloseNotifier); ok {
+			go func(done <-chan struct{}, closed <-chan bool) {
+				select {
+				case <-done:
+				case <-closed:
+					cancel()
+				}
+			}(ctx.Done(), cn.CloseNotify())
+		}
+		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
+		rctx, err := runtime.AnnotateContext(ctx, mux, req)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+		resp, md, err := request_Benchmark_GetIntStream_0(rctx, inboundMarshaler, client, req, pathParams)
+		ctx = runtime.NewServerMetadataContext(ctx, md)
+		if err != nil {
+			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
+			return
+		}
+
+		forward_Benchmark_GetIntStream_0(ctx, mux, outboundMarshaler, w, req, func() (proto.Message, error) { return resp.Recv() }, mux.GetForwardResponseOptions()...)
+
+	})
+
 	return nil
 }
 
@@ -389,6 +435,8 @@ var (
 	pattern_Benchmark_GetStructSlices_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"struct-slices"}, ""))
 
 	pattern_Benchmark_GetStructStructs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"struct-structs"}, ""))
+
+	pattern_Benchmark_GetIntStream_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"int-stream"}, ""))
 )
 
 var (
@@ -407,4 +455,6 @@ var (
 	forward_Benchmark_GetStructSlices_0 = runtime.ForwardResponseMessage
 
 	forward_Benchmark_GetStructStructs_0 = runtime.ForwardResponseMessage
+
+	forward_Benchmark_GetIntStream_0 = runtime.ForwardResponseStream
 )
