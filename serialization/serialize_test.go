@@ -182,64 +182,72 @@ func BenchmarkSerializeProtobuf_structStructs(b *testing.B) {
 // deserialize json
 
 func BenchmarkDeserializeJSON_int(b *testing.B) {
+	out := new(proto.Int)
 	for i := 0; i < b.N; i++ {
-		if err := serialization.DeserializeJSON(serializedJSON.integer); err != nil {
+		if err := serialization.DeserializeJSON(serializedJSON.integer, out); err != nil {
 			b.Fatalf("DeserializeJSON() error: %v", err)
 		}
 	}
 }
 
 func BenchmarkDeserializeJSON_intSlice(b *testing.B) {
+	out := new(proto.IntSlice)
 	for i := 0; i < b.N; i++ {
-		if err := serialization.DeserializeJSON(serializedJSON.integerSlice); err != nil {
+		if err := serialization.DeserializeJSON(serializedJSON.integerSlice, out); err != nil {
 			b.Fatalf("DeserializeJSON() error: %v", err)
 		}
 	}
 }
 
 func BenchmarkDeserializeJSON_string(b *testing.B) {
+	out := new(proto.String)
 	for i := 0; i < b.N; i++ {
-		if err := serialization.DeserializeJSON(serializedJSON.str); err != nil {
+		if err := serialization.DeserializeJSON(serializedJSON.str, out); err != nil {
 			b.Fatalf("DeserializeJSON() error: %v", err)
 		}
 	}
 }
 
 func BenchmarkDeserializeJSON_stringSlice(b *testing.B) {
+	out := new(proto.StringSlice)
 	for i := 0; i < b.N; i++ {
-		if err := serialization.DeserializeJSON(serializedJSON.strSlice); err != nil {
+		if err := serialization.DeserializeJSON(serializedJSON.strSlice, out); err != nil {
 			b.Fatalf("DeserializeJSON() error: %v", err)
 		}
 	}
 }
 
 func BenchmarkDeserializeJSON_blob(b *testing.B) {
+	out := new(proto.Blob)
 	for i := 0; i < b.N; i++ {
-		if err := serialization.DeserializeJSON(serializedJSON.blob); err != nil {
+		if err := serialization.DeserializeJSON(serializedJSON.blob, out); err != nil {
 			b.Fatalf("DeserializeJSON() error: %v", err)
 		}
 	}
 }
 
 func BenchmarkDeserializeJSON_struct(b *testing.B) {
+	out := new(proto.Struct)
 	for i := 0; i < b.N; i++ {
-		if err := serialization.DeserializeJSON(serializedJSON.structure); err != nil {
+		if err := serialization.DeserializeJSON(serializedJSON.structure, out); err != nil {
 			b.Fatalf("DeserializeJSON() error: %v", err)
 		}
 	}
 }
 
 func BenchmarkDeserializeJSON_structSlices(b *testing.B) {
+	out := new(proto.StructSlices)
 	for i := 0; i < b.N; i++ {
-		if err := serialization.DeserializeJSON(serializedJSON.structureSlices); err != nil {
+		if err := serialization.DeserializeJSON(serializedJSON.structureSlices, out); err != nil {
 			b.Fatalf("DeserializeJSON() error: %v", err)
 		}
 	}
 }
 
 func BenchmarkDeserializeJSON_structStructs(b *testing.B) {
+	out := new(proto.StructStructs)
 	for i := 0; i < b.N; i++ {
-		if err := serialization.DeserializeJSON(serializedJSON.structureStructs); err != nil {
+		if err := serialization.DeserializeJSON(serializedJSON.structureStructs, out); err != nil {
 			b.Fatalf("DeserializeJSON() error: %v", err)
 		}
 	}

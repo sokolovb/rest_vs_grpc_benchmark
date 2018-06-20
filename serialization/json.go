@@ -7,7 +7,6 @@ func SerializeJSON(in interface{}) error {
 	return err
 }
 
-func DeserializeJSON(in []byte) error {
-	var out interface{}
-	return json.Unmarshal(in, &out)
+func DeserializeJSON(in []byte, out interface{}) error {
+	return json.Unmarshal(in, out)
 }
