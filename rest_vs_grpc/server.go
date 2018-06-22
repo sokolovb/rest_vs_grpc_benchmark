@@ -11,6 +11,7 @@ import (
 	"google.golang.org/grpc/reflection"
 	"net"
 	"net/http"
+	"io"
 )
 
 const (
@@ -84,9 +85,19 @@ func (h *Handler) GetStructStructs(context.Context, *Request) (*StructStructs, e
 	return h.data.GetStructStructs(), nil
 }
 
-func (h *Handler) GetIntStream(req *Request, stream Benchmark_GetIntStreamServer) error {
-	for i := 0; i < 10000; i++ {
-		if err := stream.Send(h.data.GetInt()); err != nil {
+func (h *Handler) GetFileStream(req *Request, stream Benchmark_GetFileStreamServer) error {
+	buf := make([]byte, 32 * 1024)
+	file := h.data.FileReader()
+	for {
+		n, err := file.Read(buf)
+		if err != nil {
+			if err != io.EOF {
+				return err
+			} else {
+				return nil
+			}
+		}
+		if err := stream.Send(&Blob{Value: buf[:n]}); err != nil {
 			return err
 		}
 	}

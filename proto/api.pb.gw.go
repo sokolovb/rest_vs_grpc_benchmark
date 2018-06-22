@@ -100,11 +100,11 @@ func request_Benchmark_GetStructStructs_0(ctx context.Context, marshaler runtime
 
 }
 
-func request_Benchmark_GetIntStream_0(ctx context.Context, marshaler runtime.Marshaler, client BenchmarkClient, req *http.Request, pathParams map[string]string) (Benchmark_GetIntStreamClient, runtime.ServerMetadata, error) {
+func request_Benchmark_GetFileStream_0(ctx context.Context, marshaler runtime.Marshaler, client BenchmarkClient, req *http.Request, pathParams map[string]string) (Benchmark_GetFileStreamClient, runtime.ServerMetadata, error) {
 	var protoReq Request
 	var metadata runtime.ServerMetadata
 
-	stream, err := client.GetIntStream(ctx, &protoReq)
+	stream, err := client.GetFileStream(ctx, &protoReq)
 	if err != nil {
 		return nil, metadata, err
 	}
@@ -387,7 +387,7 @@ func RegisterBenchmarkHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 
 	})
 
-	mux.Handle("GET", pattern_Benchmark_GetIntStream_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_Benchmark_GetFileStream_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		if cn, ok := w.(http.CloseNotifier); ok {
@@ -405,14 +405,14 @@ func RegisterBenchmarkHandlerClient(ctx context.Context, mux *runtime.ServeMux, 
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Benchmark_GetIntStream_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Benchmark_GetFileStream_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Benchmark_GetIntStream_0(ctx, mux, outboundMarshaler, w, req, func() (proto.Message, error) { return resp.Recv() }, mux.GetForwardResponseOptions()...)
+		forward_Benchmark_GetFileStream_0(ctx, mux, outboundMarshaler, w, req, func() (proto.Message, error) { return resp.Recv() }, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -436,7 +436,7 @@ var (
 
 	pattern_Benchmark_GetStructStructs_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"struct-structs"}, ""))
 
-	pattern_Benchmark_GetIntStream_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"int-stream"}, ""))
+	pattern_Benchmark_GetFileStream_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0}, []string{"file"}, ""))
 )
 
 var (
@@ -456,5 +456,5 @@ var (
 
 	forward_Benchmark_GetStructStructs_0 = runtime.ForwardResponseMessage
 
-	forward_Benchmark_GetIntStream_0 = runtime.ForwardResponseStream
+	forward_Benchmark_GetFileStream_0 = runtime.ForwardResponseStream
 )

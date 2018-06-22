@@ -2,13 +2,17 @@ package mock_data
 
 import (
 	. "github.com/sokolovb/rest_vs_grpc_benchmark/proto"
+	"io"
 	"math/rand"
+	"os"
+	"path/filepath"
 	"reflect"
 )
 
 const (
 	sliceSize = 1000
 	blobSize  = 4194000
+	fileSize  = 100
 	str       = "qwerty"
 )
 
@@ -21,6 +25,7 @@ type Data struct {
 	structure        *Struct
 	structureSlices  *StructSlices
 	structureStructs *StructStructs
+	fileName         string
 }
 
 func NewData() *Data {
@@ -64,6 +69,22 @@ func NewData() *Data {
 	for i := 0; i < v.NumField(); i++ {
 		vPtr.Elem().Field(i).Set(reflect.ValueOf(s.structure))
 	}
+
+	var err error
+	ex, err := os.Executable()
+	if err != nil {
+		panic(err)
+	}
+	s.fileName = filepath.Dir(ex) + "/data"
+	file, err := os.Create(s.fileName)
+	defer file.Close()
+	if err != nil {
+		panic(err)
+	}
+	for i := 0; i < fileSize; i++ {
+		file.Write(s.blob.Value)
+	}
+
 	return s
 }
 
@@ -97,4 +118,12 @@ func (s *Data) GetStructSlices() *StructSlices {
 
 func (s *Data) GetStructStructs() *StructStructs {
 	return s.structureStructs
+}
+
+func (s *Data) FileReader() io.Reader {
+	file, err := os.Open(s.fileName)
+	if err != nil {
+		panic(err)
+	}
+	return file
 }

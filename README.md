@@ -10,8 +10,12 @@
 ### run benchmarks:
 - `./rest_vs_grpc_benchmark`
 - `cd rest_client`
-- `go test -bench=.`
+- `sh run_bench.sh `
 
 to compare with pure gRPC:
 - `cd rpc_client`
-- `go test -bench=.`
+- `sh run_bench.sh `
+
+serialization:
+- `cd serialization`
+- `sh run_bench.sh `

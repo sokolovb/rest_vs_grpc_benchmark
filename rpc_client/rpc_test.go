@@ -77,10 +77,10 @@ func BenchmarkRpcClient_GetStructStructs(b *testing.B) {
 	}
 }
 
-func BenchmarkRpcClient_GetIntStream(b *testing.B) {
+func BenchmarkRpcClient_GetFileStream(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		if err := rpc.GetIntStream(); err != nil {
-			b.Fatalf("GetIntStream() error: %v", err)
+		if err := rpc.GetFileStream(); err != nil {
+			b.Fatalf("GetFileStream() error: %v", err)
 		}
 	}
 }

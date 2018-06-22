@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+	"io"
+	"io/ioutil"
 )
 
 type RestClient struct {
@@ -50,6 +52,10 @@ func (rest *RestClient) GetStructStructs() error {
 	return rest.doGet(strings.Join([]string{rest.host, "struct-structs"}, "/"))
 }
 
+func (rest *RestClient) GetFile() error {
+	return rest.doGet(strings.Join([]string{rest.host, "file"}, "/"))
+}
+
 func (rest *RestClient) doGet(endpoint string) error {
 	resp, err := rest.c.Get(endpoint)
 	defer resp.Body.Close()
@@ -60,5 +66,6 @@ func (rest *RestClient) doGet(endpoint string) error {
 	if resp.StatusCode != http.StatusOK {
 		return fmt.Errorf("got status code %d", resp.StatusCode)
 	}
-	return nil
+	_, err = io.Copy(ioutil.Discard, resp.Body)
+	return err
 }

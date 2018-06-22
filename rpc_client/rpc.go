@@ -5,6 +5,7 @@ import (
 	. "github.com/sokolovb/rest_vs_grpc_benchmark/proto"
 	. "github.com/sokolovb/rest_vs_grpc_benchmark/rest_vs_grpc"
 	"google.golang.org/grpc"
+	"io"
 )
 
 type RpcClient struct {
@@ -56,7 +57,19 @@ func (rpc *RpcClient) GetStructStructs() error {
 	return err
 }
 
-func (rpc *RpcClient) GetIntStream() error {
-	_, err := rpc.c.GetIntStream(context.Background(), &Request{})
-	return err
+func (rpc *RpcClient) GetFileStream() error {
+	stream, err := rpc.c.GetFileStream(context.Background(), &Request{})
+	if err != nil {
+		return err
+	}
+	for {
+		_, err := stream.Recv()
+		if err != nil {
+			if err != io.EOF {
+				return err
+			} else {
+				return stream.CloseSend()
+			}
+		}
+	}
 }

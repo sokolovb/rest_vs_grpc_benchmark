@@ -45,9 +45,9 @@ service Benchmark {
             get: "/struct-structs"
         };
     }
-    rpc GetIntStream (Request) returns (stream Int) {
+    rpc GetFileStream (Request) returns (stream Blob) {
         option (google.api.http) = {
-            get: "/int-stream"
+            get: "/file"
         };
     }
 }

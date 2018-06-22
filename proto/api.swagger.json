@@ -31,6 +31,22 @@
         ]
       }
     },
+    "/file": {
+      "get": {
+        "operationId": "GetFileStream",
+        "responses": {
+          "200": {
+            "description": "(streaming responses)",
+            "schema": {
+              "$ref": "#/definitions/protoBlob"
+            }
+          }
+        },
+        "tags": [
+          "Benchmark"
+        ]
+      }
+    },
     "/int": {
       "get": {
         "operationId": "GetInt",
@@ -55,22 +71,6 @@
             "description": "",
             "schema": {
               "$ref": "#/definitions/protoIntSlice"
-            }
-          }
-        },
-        "tags": [
-          "Benchmark"
-        ]
-      }
-    },
-    "/int-stream": {
-      "get": {
-        "operationId": "GetIntStream",
-        "responses": {
-          "200": {
-            "description": "(streaming responses)",
-            "schema": {
-              "$ref": "#/definitions/protoInt"
             }
           }
         },

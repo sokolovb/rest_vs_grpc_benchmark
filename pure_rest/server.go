@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	md "github.com/sokolovb/rest_vs_grpc_benchmark/mock_data"
 	"net/http"
+	"io"
 )
 
 const PortRest = "3000"
@@ -27,6 +28,7 @@ func StartPureRestServer(data *md.Data, port string) error {
 	mux.HandleFunc("/struct", h.structure)
 	mux.HandleFunc("/struct-slices", h.structureSlices)
 	mux.HandleFunc("/struct-structs", h.structureStructs)
+	mux.HandleFunc("/file", h.file)
 	return http.ListenAndServe("localhost:"+port, mux)
 }
 
@@ -67,6 +69,11 @@ func (h *handler) structureSlices(w http.ResponseWriter, r *http.Request) {
 
 func (h *handler) structureStructs(w http.ResponseWriter, r *http.Request) {
 	formResponse(w, h.data.GetStructStructs())
+	return
+}
+
+func (h *handler) file(w http.ResponseWriter, r *http.Request) {
+	io.Copy(w, h.data.FileReader())
 	return
 }
 
