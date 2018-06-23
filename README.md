@@ -3,19 +3,14 @@
 ### dependencies:
 - Go 1.9+
 - protoc 3.0+
+- plotly (https://plot.ly/python/) with credentials
 
 ### build:
 `make build`
 
 ### run benchmarks:
 - `./rest_vs_grpc_benchmark`
-- `cd rest_client`
-- `sh run_bench.sh `
 
-to compare with pure gRPC:
-- `cd rpc_client`
-- `sh run_bench.sh `
+keep the server listening
 
-serialization:
-- `cd serialization`
-- `sh run_bench.sh `
+- `sh run_bench.sh ${plotly_username} ${plotly_token}`
