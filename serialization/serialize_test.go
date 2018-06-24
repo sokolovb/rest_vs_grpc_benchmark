@@ -1,7 +1,7 @@
 package serialization_test
 
 import (
-	"github.com/gin-gonic/gin/json"
+	"encoding/json"
 	pb "github.com/golang/protobuf/proto"
 	"github.com/sokolovb/rest_vs_grpc_benchmark/mock_data"
 	"github.com/sokolovb/rest_vs_grpc_benchmark/proto"
