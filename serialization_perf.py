@@ -8,12 +8,6 @@ if len(sys.argv) != 3:
 
 plotly.tools.set_credentials_file(username=sys.argv[1], api_key=sys.argv[2])
 
-files = {
-    'RestClient_Proxy': 'rest_client/proxy.txt',
-    'RestClient_Pure': 'rest_client/pure.txt',
-    'RpcClient': 'rpc_client/rpc.txt'
-}
-
 data_serialize_small = []
 data_serialize_big = []
 data_deserialize_small = []
@@ -24,16 +18,16 @@ with open('serialization/serialization.txt') as f:
     y = []
     for line in f:
         (key, val) = line.split()
-        x.append(key[9:])
+        x.append(key.split('_')[1])
         y.append(int(val))
     data_serialize_small.append(go.Bar(x=x[:5], y=y[:5], name='BenchmarkSerializeJSON'))
-    data_serialize_small.append(go.Bar(x=x[8:12], y=y[8:12], name='BenchmarkSerializeProtobuf'))
+    data_serialize_small.append(go.Bar(x=x[8:13], y=y[8:13], name='BenchmarkSerializeProtobuf'))
     data_serialize_big.append(go.Bar(x=x[5:8], y=y[5:8], name='BenchmarkSerializeJSON'))
-    data_serialize_big.append(go.Bar(x=x[12:15], y=y[12:15], name='BenchmarkSerializeProtobuf'))
-    data_deserialize_small.append(go.Bar(x=x[15:20], y=y[15:20], name='BenchmarkDeserializeJSON'))
-    data_deserialize_small.append(go.Bar(x=x[23:28], y=y[23:28], name='BenchmarkDeserializeProtobuf'))
-    data_deserialize_big.append(go.Bar(x=x[20:23], y=y[20:23], name='BenchmarkDeserializeJSON'))
-    data_deserialize_big.append(go.Bar(x=x[28:], y=y[28:], name='BenchmarkDeserializeProtobuf'))
+    data_serialize_big.append(go.Bar(x=x[13:16], y=y[13:16], name='BenchmarkSerializeProtobuf'))
+    data_deserialize_small.append(go.Bar(x=x[16:21], y=y[16:21], name='BenchmarkDeserializeJSON'))
+    data_deserialize_small.append(go.Bar(x=x[24:29], y=y[24:29], name='BenchmarkDeserializeProtobuf'))
+    data_deserialize_big.append(go.Bar(x=x[21:24], y=y[21:24], name='BenchmarkDeserializeJSON'))
+    data_deserialize_big.append(go.Bar(x=x[29:], y=y[29:], name='BenchmarkDeserializeProtobuf'))
 
 layout = go.Layout(
     barmode='group'

@@ -23,7 +23,10 @@ for k, v in files.items():
         y = []
         for line in f:
             (key, val) = line.split()
-            x.append(key[9:])
+            func = key.split('_')[1]
+            if func[-2] == '-':
+                func = func[:-2]
+            x.append(func)
             y.append(int(val))
         data_small.append(go.Bar(x=x[:5], y=y[:5], name=k))
         data_big.append(go.Bar(x=x[5:-1], y=y[5:-1], name=k))
