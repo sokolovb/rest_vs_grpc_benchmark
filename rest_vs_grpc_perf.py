@@ -6,6 +6,14 @@ if len(sys.argv) != 3:
     print('Please specify Plotly credentials')
     sys.exit(0)
 
+
+def ns_to_us(a):
+    return a/1000
+
+def ns_to_ms(a):
+    return a/1000000
+
+
 plotly.tools.set_credentials_file(username=sys.argv[1], api_key=sys.argv[2])
 
 files = {
@@ -29,11 +37,11 @@ for k, v in files.items():
                 func = func[:-2]
             x.append(func)
             y.append(int(val))
-        data_small.append(go.Bar(x=x[:5], y=y[:5], name=k))
-        data_big.append(go.Bar(x=x[5:-1], y=y[5:-1], name=k))
+        data_small.append(go.Bar(x=x[:5], y=list(map(ns_to_ms, y[:5])), name=k))
+        data_big.append(go.Bar(x=x[5:-1], y=list(map(ns_to_ms, y[5:-1])), name=k))
         if x[-1].endswith('Stream'):
             x[-1] = x[-1][:-6]
-        data_stream.append(go.Bar(x=x[-1], y=y[-1], name=k))
+        data_stream.append(go.Bar(x=x[-1], y=y[-1]/1000000000, name=k))
 
 layout = go.Layout(
     barmode='group'
@@ -41,7 +49,6 @@ layout = go.Layout(
 
 fig = go.Figure(data=data_small, layout=layout)
 plotly.plotly.plot(fig, filename='grpc_vs_rest_benchmark_small')
-
 
 fig1 = go.Figure(data=data_big, layout=layout)
 plotly.plotly.plot(fig1, filename='grpc_vs_rest_benchmark_big')
